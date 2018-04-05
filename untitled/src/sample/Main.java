@@ -3,7 +3,10 @@ package sample;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,10 +14,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import javafx.scene.image.ImageView;
+
+import javax.swing.text.html.ImageView;
+import java.awt.*;
 
 public class Main extends Application {
 
@@ -42,11 +48,9 @@ public class Main extends Application {
         reverseButton.setMinSize(35,35);
         reverseButton.setFont(Font.font(16));
         Button cleanButton = new Button();
-        ImageView cleanIcon = new ImageView(("File:res/clean.png"));
-        cleanIcon.setFitHeight(25);
-        cleanIcon.setFitWidth(25);
+        //Image image = new Image(getClass().getResourceAsStream("File:res/clean.png"));
+        //ImageView cleanIcon = new ImageView(getClass().getResourceAsStream("File:res/clean.png"));
         cleanButton.setMinSize(35,35);
-        cleanButton.setGraphic(cleanIcon);
 
         borderPane1.setCenter(reverseButton);
         borderPane1.setRight(cleanButton);
