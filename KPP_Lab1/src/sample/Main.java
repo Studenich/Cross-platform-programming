@@ -1,25 +1,90 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 
+/**
+ * Main class which contains all GUI realization and actions.
+ *
+ * @author Valentin Studenichnik
+ */
 public class Main extends Application {
 
+    /**
+     * Font size of text in text fields.
+     */
+    private static final int TEXT_FIELD_FONT_SIZE = 14;
+    /**
+     * Maximum text length that you can input.
+     */
+    private static final int INPUT_FIELD_MAX_TEXT_LENGTH = 55;
+    /**
+     * Font size of text in buttons.
+     */
+    private static final int BUTTON_FONT_SIZE = 16;
+    /**
+     * Minimum size of button (square).
+     */
+    private static final int BUTTON_MIN_SIZE = 35;
+    /**
+     * Size of image from resources (square).
+     */
+    private static final int IMAGE_SIZE = 25;
+    /**
+     * Spacing between labels and text fields inside vBox.
+     */
+    private static final int INTERNAL_VBOX_SPACING = 3;
+    /**
+     * Spacing between vBox (labels and text fields)
+     * and border pane with buttons.
+     */
+    private static final int MAIN_VBOX_SPACING = 15;
+    /**
+     * Maximum width of the main vBox which contains all elements.
+     */
+    private static final int MAIN_VBOX_MAX_WIDTH = 600;
+    /**
+     * Maximum height of the main vBox.
+     */
+    private static final int MAIN_VBOX_MAX_HEIGHT = 50;
+    /**
+     * Margins of mane pane (root).
+     */
+    private static final int BORDER_PANE_MARGINS = 10;
+    /**
+     * Start width of the window.
+     */
+    private static final int PRIMARY_STAGE_START_WIDTH = 350;
+    /**
+     * Start height of the window.
+     */
+    private static final int PRIMARY_STAGE_START_HEIGHT = 250;
+    /**
+     * Minimum width of the window.
+     */
+    private static final int PRIMARY_STAGE_MIN_WIDTH = 300;
+    /**
+     * Minimum height of the window.
+     */
+    private static final int PRIMARY_STAGE_MIN_HEIGHT = 230;
+
+    /**
+     * Start method.
+     *
+     * @param primaryStage base of the application's window
+     */
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public final void start(final Stage primaryStage) {
+
         BorderPane root = new BorderPane();
         primaryStage.setTitle("ReverString");
 
@@ -27,25 +92,26 @@ public class Main extends Application {
 
         Label inputLabel = new Label("Your string:");
         TextField inputTextField = new TextField();
-        inputTextField.setFont(Font.font(14));
+        inputTextField.setFont(Font.font(TEXT_FIELD_FONT_SIZE));
         Label outputLabel = new Label("Reversed string:");
         TextField outputTextField = new TextField();
-        outputTextField.setFont(Font.font(14));
+        outputTextField.setFont(Font.font(TEXT_FIELD_FONT_SIZE));
         outputTextField.setEditable(false);
 
-        vBox1.setSpacing(3);
-        vBox1.getChildren().addAll(inputLabel, inputTextField, outputLabel, outputTextField);
+        vBox1.setSpacing(INTERNAL_VBOX_SPACING);
+        vBox1.getChildren().addAll(inputLabel, inputTextField,
+                outputLabel, outputTextField);
 
         BorderPane borderPane1 = new BorderPane();
 
         Button reverseButton = new Button("Reverse");
-        reverseButton.setMinSize(35,35);
-        reverseButton.setFont(Font.font(16));
+        reverseButton.setMinSize(BUTTON_MIN_SIZE, BUTTON_MIN_SIZE);
+        reverseButton.setFont(Font.font(BUTTON_FONT_SIZE));
         Button cleanButton = new Button();
         ImageView cleanIcon = new ImageView(("File:res/clean.png"));
-        cleanIcon.setFitHeight(25);
-        cleanIcon.setFitWidth(25);
-        cleanButton.setMinSize(35,35);
+        cleanIcon.setFitHeight(IMAGE_SIZE);
+        cleanIcon.setFitWidth(IMAGE_SIZE);
+        cleanButton.setMinSize(BUTTON_MIN_SIZE, BUTTON_MIN_SIZE);
         cleanButton.setGraphic(cleanIcon);
 
         borderPane1.setCenter(reverseButton);
@@ -53,49 +119,45 @@ public class Main extends Application {
 
         VBox vBoxMain = new VBox();
         vBoxMain.getChildren().addAll(vBox1, borderPane1);
-        vBoxMain.setSpacing(15);
-        vBoxMain.setMaxSize(600, 50);
-        BorderPane.setMargin(vBoxMain, new Insets(10,10,10,10));
+        vBoxMain.setSpacing(MAIN_VBOX_SPACING);
+        vBoxMain.setMaxSize(MAIN_VBOX_MAX_WIDTH, MAIN_VBOX_MAX_HEIGHT);
+        BorderPane.setMargin(vBoxMain, new Insets(BORDER_PANE_MARGINS));
 
         root.setCenter(vBoxMain);
 
-        reverseButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                outputTextField.setText(new StringBuilder(inputTextField.getText()).reverse().toString());
+        reverseButton.setOnAction(event ->
+                outputTextField.setText(
+                        ReverString.reverse(inputTextField.getText())));
+
+        cleanButton.setOnAction(event -> {
+            inputTextField.setText(null);
+            outputTextField.setText(null);
+        });
+
+        inputTextField.setOnMouseClicked(event ->
+                inputTextField.selectAll());
+
+        inputTextField.setOnKeyPressed(event -> {
+            outputTextField.setText(null);
+            if (inputTextField.getLength() >= INPUT_FIELD_MAX_TEXT_LENGTH) {
+                inputTextField.deleteText(INPUT_FIELD_MAX_TEXT_LENGTH,
+                                          inputTextField.getLength());
             }
         });
 
-        cleanButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                inputTextField.setText(null);
-                outputTextField.setText(null);
-            }
-        });
-
-        inputTextField.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                inputTextField.selectAll();
-            }
-        });
-
-        inputTextField.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-                outputTextField.setText(null);
-            }
-        });
-
-        primaryStage.setScene(new Scene(root, 350, 250));
-        primaryStage.setMinHeight(230);
-        primaryStage.setMinWidth(300);
+        primaryStage.setScene(new Scene(root, PRIMARY_STAGE_START_WIDTH,
+                                              PRIMARY_STAGE_START_HEIGHT));
+        primaryStage.setMinWidth(PRIMARY_STAGE_MIN_WIDTH);
+        primaryStage.setMinHeight(PRIMARY_STAGE_MIN_HEIGHT);
         primaryStage.show();
     }
 
-
-    public static void main(String[] args) {
+    /**
+     * Main method. Start the program.
+     *
+     * @param args arguments for launching
+     */
+    public static void main(final String[] args) {
         launch(args);
     }
 }
