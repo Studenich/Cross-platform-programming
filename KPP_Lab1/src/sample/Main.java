@@ -23,10 +23,11 @@ public class Main extends Application {
      * Font size of text in text fields.
      */
     private static final int TEXT_FIELD_FONT_SIZE = 14;
-    /**
+/*    /**
      * Maximum text length that you can input.
-     */
-    private static final int INPUT_FIELD_MAX_TEXT_LENGTH = 55;
+
+    private static final int INPUT_FIELD_MAX_TEXT_LENGTH = 55;*/
+
     /**
      * Font size of text in buttons.
      */
@@ -137,13 +138,14 @@ public class Main extends Application {
         inputTextField.setOnMouseClicked(event ->
                 inputTextField.selectAll());
 
-        inputTextField.setOnKeyPressed(event -> {
-            outputTextField.setText(null);
-            if (inputTextField.getLength() >= INPUT_FIELD_MAX_TEXT_LENGTH) {
-                inputTextField.deleteText(INPUT_FIELD_MAX_TEXT_LENGTH,
-                                          inputTextField.getLength());
-            }
-        });
+        inputTextField.setOnKeyReleased(event -> outputTextField.setText(
+                ReverString.reverse(inputTextField.getText())));
+
+        /*inputTextField.setOnKeyPressed(event -> {
+            //outputTextField.setText(null);
+            outputTextField.setText(
+                    ReverString.reverse(inputTextField.getText()));
+        });*/
 
         primaryStage.setScene(new Scene(root, PRIMARY_STAGE_START_WIDTH,
                                               PRIMARY_STAGE_START_HEIGHT));

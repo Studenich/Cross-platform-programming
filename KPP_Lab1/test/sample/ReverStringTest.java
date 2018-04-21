@@ -13,7 +13,7 @@ final class ReverStringTest {
      * Test method
      */
     @org.junit.jupiter.api.Test
-    void reverse() {
+    final void reverse() {
         String input = "ABC 123 ";
         String actual = ReverString.reverse(input);
         String expected = " 321 CBA";
