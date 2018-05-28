@@ -1,0 +1,11 @@
+[info] Packaging C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\kpp_lab5_2.12-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	main
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main
+[debug] 	main\scala
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main\scala
+[debug] 	main\scala\Main$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main\scala\Main$.class
+[debug] 	main\scala\Main.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main\scala\Main.class
+[info] Done packaging.

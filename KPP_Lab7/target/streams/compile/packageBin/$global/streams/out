@@ -1,0 +1,35 @@
+[info] Packaging C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\kpp_lab7_2.12-0.1.jar ...
+[debug] Input file mappings:
+[debug] 	Animals$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$.class
+[debug] 	Animals$Human.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$Human.class
+[debug] 	Animals$Human$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$Human$.class
+[debug] 	Main$Human.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$Human.class
+[debug] 	Animals.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals.class
+[debug] 	Main$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$.class
+[debug] 	ChangeString.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\ChangeString.class
+[debug] 	Main$Canine.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$Canine.class
+[debug] 	Main$Animal.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$Animal.class
+[debug] 	Main.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main.class
+[debug] 	Main$Human$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$Human$.class
+[debug] 	Animals$Canine.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$Canine.class
+[debug] 	Main$Canine$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Main$Canine$.class
+[debug] 	Animals$Canine$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$Canine$.class
+[debug] 	ChangeString$.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\ChangeString$.class
+[debug] 	Animals$Animal.class
+[debug] 	  C:\Users\Валик\IdeaProjects\KPP_Lab7\target\scala-2.12\classes\Animals$Animal.class
+[info] Done packaging.

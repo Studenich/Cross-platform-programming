@@ -1,0 +1,27 @@
+[debug] 
+[debug] Initial source changes: 
+[debug] 	removed:Set()
+[debug] 	added: Set()
+[debug] 	modified: Set()
+[debug] Invalidated products: Set(C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main\scala\Main$.class, C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes\main\scala\Main.class)
+[debug] External API changes: API Changes: Set()
+[debug] Modified binary dependencies: Set()
+[debug] Initial directly invalidated classes: Set()
+[debug] 
+[debug] Sources indirectly invalidated by:
+[debug] 	product: Set(C:\Users\Валик\IdeaProjects\KPP_Lab5\src\main\scala\Main.scala)
+[debug] 	binary dep: Set()
+[debug] 	external source: Set()
+[debug] All sources are invalidated.
+[debug] Recompiling all 1 sources: invalidated sources (1) exceeded 50.0% of all sources
+[info] Compiling 1 Scala source to C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.1.7:compile for Scala 2.12.6
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.1.7:compile for Scala 2.12.6
+[debug] [zinc] Running cached compiler 16afd12d for Scala compiler version 2.12.6
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	C:\Program Files\Java\jdk1.8.0_162\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_162\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_162\jre\classes;C:\Users\Валик\.sbt\boot\scala-2.12.6\lib\scala-library.jar
+[debug] 	-classpath
+[debug] 	C:\Users\Валик\IdeaProjects\KPP_Lab5\target\scala-2.12\classes
+[debug] Scala compilation took 4.754095803 s
+[info] Done compiling.
