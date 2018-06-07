@@ -3,14 +3,22 @@ object Main {
     println
 
     val string = "London is the capital of GreatBritain"
-    println(changeString(string))
+    println("---First task---")
+    println("Source string:\t\t" + string)
+    println("Changed string:\t\t" + changeString(string))
 
+    println("\n---Second task---")
     val human = Human("People", "are", "not", "animals.")
+    println("Human Object:")
     println(checkAnimal(human))
     val canine = Canine("Lada", "Husky")
+    println("Canine Object:")
     println(checkAnimal(canine))
 
     println
+
+    val a = List(1, 2, 3)
+    println()
   }
 
   def changeString(string:String): String = {
@@ -73,6 +81,7 @@ object Animals{
     }
   }
 
+  //can be trait
   abstract class Animal {
     def unapply(): String{}
   }
